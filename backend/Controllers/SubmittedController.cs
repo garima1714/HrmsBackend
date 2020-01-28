@@ -27,7 +27,8 @@ namespace backend.Controllers
                     a.TimeSheetItem.Hours,
                     a.TimeSheetEntry.Customer,
                     a.TimeSheetEntry.Project,
-                    a.TimeSheetEntry.Task
+                    a.TimeSheetEntry.Task,
+                    a.Status,
                 }).ToList();
                 Console.WriteLine(itm);
                 return Ok(itm);

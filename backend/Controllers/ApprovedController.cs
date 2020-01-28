@@ -20,7 +20,7 @@ namespace backend.Controllers
             try {
                 var itm = db.TimeSheet.Where(e => e.Status == "Approved")
                 .Select(a => new { a.EmpId, a.EmployeeName, a.TimeSheetItem.Day, a.TimeSheetItem.Hours,a.TimeSheetEntry.Customer,a.TimeSheetEntry.Project,
-                    a.TimeSheetEntry.Task}).ToList();
+                    a.TimeSheetEntry.Task,a.Status}).ToList();
                 Console.WriteLine(itm);
                 return Ok(itm);
             }

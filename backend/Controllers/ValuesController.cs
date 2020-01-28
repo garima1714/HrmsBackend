@@ -34,6 +34,7 @@ namespace backend.Controllers
                              od.Project,
                              ct.Day,
                              ct.Hours,
+                             pd.Status,
                          }).ToList();
                 return Ok(q);
             }
