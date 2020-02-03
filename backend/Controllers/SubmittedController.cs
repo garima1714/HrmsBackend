@@ -20,7 +20,8 @@ namespace backend.Controllers
             try
             {
                 var itm = db.TimeSheet.Where(e => e.Status == "Submitted")
-                .Select(a => new {
+                .Select(a => new
+                {
                     a.EmpId,
                     a.EmployeeName,
                     a.TimeSheetItem.Day,

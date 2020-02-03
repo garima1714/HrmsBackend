@@ -35,6 +35,8 @@ namespace backend.Controllers
                              ct.Day,
                              ct.Hours,
                              pd.Status,
+                             ct.To,
+                             ct.From,
                          }).ToList();
                 return Ok(q);
             }
@@ -52,7 +54,7 @@ namespace backend.Controllers
             // return "value";
             try
             {
-                var q = (from pd in db.TimeSheet 
+                var q = (from pd in db.TimeSheet
                          join od in db.TimeSheetEntry on pd.EmpId equals od.EmpId
                          join ct in db.TimeSheetItem
                          on new { a = od.EmpId } equals new { a = ct.EmpId }
@@ -69,10 +71,10 @@ namespace backend.Controllers
                          }).ToList();
                 return Ok(q);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return Ok(BadRequest(new { error = e }));
-               // Console.WriteLine(BadRequest(new { error = e }));
+                // Console.WriteLine(BadRequest(new { error = e }));
             }
         }
 
@@ -94,11 +96,13 @@ namespace backend.Controllers
                 ts.tab2.Project = value.tab2.Project;
                 ts.tab2.Task = value.tab2.Task;
                 ts.tab2.EmployeeName = value.tab2.EmployeeName;
-                ts.tab2.Status = value.tab2.Status;
+                ts.tab2.Status = value.tab1.Status;
                 ts.tab3.EmpId = value.tab1.EmpId;
                 ts.tab3.Date = value.tab3.Date;
                 ts.tab3.Day = value.tab3.Day;
                 ts.tab3.Hours = value.tab3.Hours;
+                ts.tab3.From = value.tab3.From;
+                ts.tab3.To = value.tab3.To;
                 db.TimeSheet.Add(ts.tab1);
                 db.TimeSheetEntry.Add(ts.tab2);
                 db.TimeSheetItem.Add(ts.tab3);

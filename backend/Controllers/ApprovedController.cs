@@ -17,14 +17,25 @@ namespace backend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            try {
+            try
+            {
                 var itm = db.TimeSheet.Where(e => e.Status == "Approved")
-                .Select(a => new { a.EmpId, a.EmployeeName, a.TimeSheetItem.Day, a.TimeSheetItem.Hours,a.TimeSheetEntry.Customer,a.TimeSheetEntry.Project,
-                    a.TimeSheetEntry.Task,a.Status}).ToList();
+                .Select(a => new
+                {
+                    a.EmpId,
+                    a.EmployeeName,
+                    a.TimeSheetItem.Day,
+                    a.TimeSheetItem.Hours,
+                    a.TimeSheetEntry.Customer,
+                    a.TimeSheetEntry.Project,
+                    a.TimeSheetEntry.Task,
+                    a.Status
+                }).ToList();
                 Console.WriteLine(itm);
                 return Ok(itm);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 return Ok(BadRequest(new { error = e }));
                 //Console.WriteLine(BadRequest(new { error = e }));
             }

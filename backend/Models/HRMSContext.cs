@@ -61,6 +61,11 @@ namespace backend.Models
                     .HasColumnName("emp_Id")
                     .ValueGeneratedNever();
 
+                entity.Property(e => e.Company)
+                    .HasColumnName("company")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Customer)
                     .HasColumnName("customer")
                     .HasMaxLength(50)
@@ -113,7 +118,20 @@ namespace backend.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Hours).HasColumnName("hours");
+                entity.Property(e => e.From)
+                    .HasColumnName("from")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Hours)
+                    .HasColumnName("hours")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.To)
+                    .HasColumnName("to")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Emp)
                     .WithOne(p => p.TimeSheetItem)

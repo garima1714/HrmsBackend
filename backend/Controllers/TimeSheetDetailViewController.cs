@@ -10,23 +10,26 @@ namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RejectedController : ControllerBase
+    public class TimeSheetDetailViewController : ControllerBase
     {
         HRMSContext db = new HRMSContext();
-        // GET: api/Rejected
+        // GET: api/TimeSheetDetailView
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<string>> Get(int id, string to, string from, string day)
         {
             try
             {
-                var itm = db.TimeSheet.Where(e => e.Status == "Rejected")
+                var itm = db.TimeSheet.Where(e => e.EmpId == id && e.TimeSheetItem.To == to && e.TimeSheetItem.From == from && e.TimeSheetItem.Day == day)
                 .Select(a => new
                 {
                     a.EmpId,
                     a.EmployeeName,
+                    a.TimeSheetItem.To,
+                    a.TimeSheetItem.From,
                     a.TimeSheetItem.Day,
                     a.TimeSheetItem.Hours,
                     a.TimeSheetEntry.Customer,
+                    a.TimeSheetEntry.Company,
                     a.TimeSheetEntry.Project,
                     a.TimeSheetEntry.Task,
                     a.Status,
@@ -41,20 +44,20 @@ namespace backend.Controllers
             }
         }
 
-        // GET: api/Rejected/5
+        // GET: api/TimeSheetDetailView/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Rejected
+        // POST: api/TimeSheetDetailView
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/Rejected/5
+        // PUT: api/TimeSheetDetailView/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

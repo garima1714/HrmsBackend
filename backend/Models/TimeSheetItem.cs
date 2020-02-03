@@ -8,7 +8,9 @@ namespace backend.Models
         public int EmpId { get; set; }
         public string Date { get; set; }
         public string Day { get; set; }
-        public TimeSpan? Hours { get; set; }
+        public string Hours { get; set; }
+        public string To { get; set; }
+        public string From { get; set; }
 
         public TimeSheet Emp { get; set; }
     }
