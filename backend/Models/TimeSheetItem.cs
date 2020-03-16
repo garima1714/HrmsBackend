@@ -11,6 +11,7 @@ namespace backend.Models
         public string Hours { get; set; }
         public string To { get; set; }
         public string From { get; set; }
+        public int Id { get; set; }
 
         public TimeSheet Emp { get; set; }
     }

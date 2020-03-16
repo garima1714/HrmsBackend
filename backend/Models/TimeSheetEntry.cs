@@ -12,6 +12,7 @@ namespace backend.Models
         public string EmployeeName { get; set; }
         public string Status { get; set; }
         public string Company { get; set; }
+        public int? Id { get; set; }
 
         public TimeSheet Emp { get; set; }
     }

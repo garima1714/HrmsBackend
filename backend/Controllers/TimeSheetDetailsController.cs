@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace backend.Controllers
         HRMSContext db = new HRMSContext();
         // GET: api/TimeSheetDetails
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<string>> Get(int id, string to, string from, string day)
         {
             try
@@ -26,7 +28,7 @@ namespace backend.Controllers
                     a.EmployeeName,
                     a.TimeSheetItem.To,
                     a.TimeSheetItem.From,
-                    
+                     
                     a.TimeSheetItem.Hours,
                     a.TimeSheetEntry.Customer,
                     a.TimeSheetEntry.Project,

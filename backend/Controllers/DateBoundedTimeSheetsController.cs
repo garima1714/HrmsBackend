@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("TimeSheet/BoundedTimeSheets")]
     [ApiController]
-    public class TimeSheetDetailViewController : ControllerBase
+    public class DateBoundedTimeSheetsController : ControllerBase
     {
         HRMSContext db = new HRMSContext();
         // GET: api/TimeSheetDetailView
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<string>> Get(int id, string to, string from, string day)
         {
             try

@@ -24,8 +24,8 @@ namespace backend.Controllers
                 {
                     a.EmpId,
                     a.EmployeeName,
-                    a.TimeSheetItem.Day,
-                    a.TimeSheetItem.Hours,
+               //     a.TimeSheetItem.Day,
+                   // a.TimeSheetItem.Hours,
                     a.TimeSheetEntry.Customer,
                     a.TimeSheetEntry.Project,
                     a.TimeSheetEntry.Task,
