@@ -12,3 +12,17 @@ C:\Users\garima.sharma\Desktop\HRMSbackend\backend\backend\obj\Release\netcoreap
 C:\Users\garima.sharma\Desktop\HRMSbackend\backend\backend\obj\Release\netcoreapp2.1\backend.RazorTargetAssemblyInfo.cache
 C:\Users\garima.sharma\Desktop\HRMSbackend\backend\backend\obj\Release\netcoreapp2.1\backend.dll
 C:\Users\garima.sharma\Desktop\HRMSbackend\backend\backend\obj\Release\netcoreapp2.1\backend.pdb
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.csprojAssemblyReference.cache
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.csproj.CoreCompileInputs.cache
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.RazorAssemblyInfo.cache
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.RazorAssemblyInfo.cs
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.AssemblyInfoInputs.cache
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.AssemblyInfo.cs
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.dll
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.pdb
+E:\garima_latest_backend\HrmsBackend\backend\bin\Release\netcoreapp2.1\backend.deps.json
+E:\garima_latest_backend\HrmsBackend\backend\bin\Release\netcoreapp2.1\backend.runtimeconfig.json
+E:\garima_latest_backend\HrmsBackend\backend\bin\Release\netcoreapp2.1\backend.runtimeconfig.dev.json
+E:\garima_latest_backend\HrmsBackend\backend\bin\Release\netcoreapp2.1\backend.dll
+E:\garima_latest_backend\HrmsBackend\backend\bin\Release\netcoreapp2.1\backend.pdb
+E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\backend.RazorTargetAssemblyInfo.cache

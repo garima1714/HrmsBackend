@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\PubTmp\Out\" />
+  <dbfullsql path="E:\garima_latest_backend\HrmsBackend\backend\obj\Release\netcoreapp2.1\PubTmp\EFSQLScripts\backend.Models.HRMSContext.sql" />
+</sitemanifest>

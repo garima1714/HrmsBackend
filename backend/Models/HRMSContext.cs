@@ -18,7 +18,10 @@ namespace backend.Models
         public virtual DbSet<EditTimesheet> EditTimesheet { get; set; }
         public virtual DbSet<TimeSheet> TimeSheet { get; set; }
         public virtual DbSet<TimeSheetEntry> TimeSheetEntry { get; set; }
+        public virtual DbSet<Timesheetentryv2> Timesheetentryv2 { get; set; }
         public virtual DbSet<TimeSheetItem> TimeSheetItem { get; set; }
+        public virtual DbSet<Timesheetitemv2> Timesheetitemv2 { get; set; }
+        public virtual DbSet<Timesheetv2> Timesheetv2 { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -26,7 +29,7 @@ namespace backend.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=CYG365;Database=HRMS;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=HRMS;Trusted_Connection=True;");
             }
         }
 
@@ -133,6 +136,33 @@ namespace backend.Models
                     .HasConstraintName("FK_timeSheetEntry_timeSheet");
             });
 
+            modelBuilder.Entity<Timesheetentryv2>(entity =>
+            {
+                entity.ToTable("timesheetentryv2");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Company)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Customer)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Project)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Task)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<TimeSheetItem>(entity =>
             {
                 entity.HasKey(e => e.EmpId);
@@ -163,10 +193,7 @@ namespace backend.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.To)
                     .HasColumnName("to")
@@ -178,6 +205,52 @@ namespace backend.Models
                     .HasForeignKey<TimeSheetItem>(d => d.EmpId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_timeSheetItem_timeSheet");
+            });
+
+            modelBuilder.Entity<Timesheetitemv2>(entity =>
+            {
+                entity.HasKey(e => e.TimestampId);
+
+                entity.ToTable("timesheetitemv2");
+
+                entity.Property(e => e.Date).HasColumnType("date");
+
+                entity.Property(e => e.EmpId)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FromDate).HasColumnType("date");
+
+                entity.Property(e => e.Status)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Submittedto)
+                    .IsRequired()
+                    .HasColumnName("submittedto")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ToDate).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<Timesheetv2>(entity =>
+            {
+                entity.HasKey(e => e.EmpId);
+
+                entity.ToTable("timesheetv2");
+
+                entity.Property(e => e.EmpId)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.EmpName)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Users>(entity =>

@@ -13516,23 +13516,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\garima.sharma\\.nuget\\packages\\": {},
+    "C:\\Users\\ganga.singh\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\garima.sharma\\Desktop\\HRMSbackend\\backend\\backend\\backend.csproj",
+      "projectUniqueName": "E:\\garima_latest_backend\\HrmsBackend\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\garima.sharma\\Desktop\\HRMSbackend\\backend\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\garima.sharma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\garima.sharma\\Desktop\\HRMSbackend\\backend\\backend\\obj\\",
+      "projectPath": "E:\\garima_latest_backend\\HrmsBackend\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\ganga.singh\\.nuget\\packages\\",
+      "outputPath": "E:\\garima_latest_backend\\HrmsBackend\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\garima.sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ganga.singh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

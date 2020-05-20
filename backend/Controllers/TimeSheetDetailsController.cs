@@ -28,7 +28,6 @@ namespace backend.Controllers
                     a.EmployeeName,
                     a.TimeSheetItem.To,
                     a.TimeSheetItem.From,
-                     
                     a.TimeSheetItem.Hours,
                     a.TimeSheetEntry.Customer,
                     a.TimeSheetEntry.Project,

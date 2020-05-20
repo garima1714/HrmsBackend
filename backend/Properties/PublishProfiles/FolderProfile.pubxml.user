@@ -7,10 +7,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>E:\LOCALIIS\backend</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATtc4vper2EeCptmUvFoG1QAAAAACAAAAAAADZgAAwAAAABAAAAAkYXK5EQUpi8Ix3ybk//A8AAAAAASAAACgAAAAEAAAACMt1rAUbtINaw+qPKn6hw8IAAAAmaqeEzrEcIsUAAAA9tMFRHnrlebzB8jHXu8oPPwV+ys=</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
     <DestinationConnectionStrings Include="localDb">
-      <Value>Server=172.25.122.36%3bDatabase=HRMS%3bUser Id=sa%3bPassword=P%40ssword01%3bTrusted_Connection=true%3b</Value>
+      <Value>Server=CYG305\\SQLEXPRESS%3bDatabase=HRMS%3bTrusted_Connection=true%3b</Value>
     </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="backend.Models.HRMSContext">
+      <Value>Server=CYG305\\SQLEXPRESS%3bDatabase=HRMS%3bTrusted_Connection=true%3b</Value>
+    </EFMigrations>
   </ItemGroup>
 </Project>

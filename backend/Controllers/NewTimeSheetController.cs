@@ -72,8 +72,8 @@ namespace backend.Controllers
         // POST: api/addItem
         [HttpPost]
         //[Authorize]
-        public IActionResult Post([FromBody]addvalue value)
-        {
+        public IActionResult Post([FromForm]addvalue value)
+         {
             TimeSheet timeSheet = new TimeSheet();
             TimeSheetItem timeSheetItem = new TimeSheetItem();
             TimeSheetEntry timeSheetEntry = new TimeSheetEntry();
